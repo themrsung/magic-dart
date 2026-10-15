@@ -84,3 +84,11 @@ Status `013` (no data) is returned as an empty result by default. Set `noDataAsE
 ## Disclaimer
 
 This is an unofficial client and is not affiliated with or endorsed by the Financial Supervisory Service. Data is provided as returned by OpenDART. Nothing in this repository is investment advice.
+
+## Getting an API key
+
+OpenDART lets both individuals and businesses sign up for the API service. You can create an account at `https://opendart.fss.or.kr/`. For business or commercial use, sign up with a Korean business registration number (BRN); business accounts get a higher usage limit. The usage limit figures in this repository's documentation assume you have a working business account.
+
+## License
+
+[MIT](LICENSE) © 2026 Min Jun Sung

@@ -2,6 +2,7 @@
   "name": "magic-dart",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "description": "Typed, rate-limited Node client for the OpenDART (금융감독원 전자공시) API",
   "type": "module",
   "engines": { "node": ">=22.18" },
