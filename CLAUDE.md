@@ -12,6 +12,7 @@ Typed, rate-limited Node client for the OpenDART (금융감독원 전자공시) 
 
 ## Architecture
 
+- `guidelines/` holds the UI design guidelines for a frontend agent building on this client (data presentation, charts, error states, i18n). Start at `guidelines/README.md`.
 - `docs/opendart-api-guide.md` is the API reference this client implements (copied from dashboard note 22). Section numbers (e.g. "docs §3.2") in code comments point here.
 - `src/endpoints.ts` holds the `ENDPOINTS` registry: all 85 APIs with group, path, `params` shape, `response` shape (`list` / `object` / `group` / `paged` / `zip`) and file extension. **To add an API, add a registry entry.** It is then exposed automatically as `client.api.<name>`.
 - `src/params.ts` maps each param shape to its request type. `buildQuery` validates parameters before any request is sent and throws `OpenDartValidationError`. It checks corp_code length, `bsns_year ≥ 2015`, reprt/idx/sj_div codes, date ranges and the 100-corp cap.
