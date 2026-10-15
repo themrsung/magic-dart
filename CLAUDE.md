@@ -1,11 +1,12 @@
 # CLAUDE.md
 
-Typed, rate-limited Node client for the OpenDART (금융감독원 전자공시) API. TypeScript with no runtime dependencies. Node ≥22.18 runs the `.ts` files directly, so there is no build step.
+Typed, rate-limited Node client for the OpenDART (금융감독원 전자공시) API. TypeScript with no runtime dependencies. Node ≥22.18 runs the `.ts` files directly during development; `pnpm build` compiles `src/` to `dist/` for the published npm package.
 
 ## Commands
 
 - `pnpm install` installs the dev deps (`typescript`, `@types/node` only)
 - `pnpm typecheck` runs `tsc --noEmit`
+- `pnpm build` emits `dist/` via `tsconfig.build.json` (`rewriteRelativeImportExtensions` turns `./x.ts` imports into `./x.js`). `prepublishOnly` runs typecheck + test + build, and `files` limits the tarball to `dist`, README, LICENSE. Keep relative imports with `.ts` extensions
 - `pnpm test` runs the offline unit tests (`node --test`). They mock `fetch` and make no network calls.
 - Run a single test file: `node --test test/units.test.ts`
 - `pnpm smoke` runs the live test. It calls every endpoint once against the real API. It needs `OPENDART_API_KEY` in `.env` (gitignored; see `.env.example`). The key is IP-locked: calls from an unregistered IP fail with status `012`.

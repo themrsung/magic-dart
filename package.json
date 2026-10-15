@@ -1,16 +1,52 @@
 {
   "name": "magic-dart",
   "version": "0.1.0",
-  "private": true,
-  "license": "MIT",
   "description": "Typed, rate-limited Node client for the OpenDART (금융감독원 전자공시) API",
+  "license": "MIT",
+  "author": "Min Jun Sung",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/themrsung/magic-dart.git"
+  },
+  "homepage": "https://github.com/themrsung/magic-dart#readme",
+  "bugs": {
+    "url": "https://github.com/themrsung/magic-dart/issues"
+  },
+  "keywords": [
+    "opendart",
+    "dart",
+    "korea",
+    "fss",
+    "disclosure",
+    "공시",
+    "financial-statements",
+    "typescript"
+  ],
   "type": "module",
-  "engines": { "node": ">=22.18" },
-  "exports": { ".": "./src/index.ts" },
+  "engines": {
+    "node": ">=22.18"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
   "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
     "typecheck": "tsc --noEmit",
     "test": "node --test 'test/**/*.test.ts'",
-    "smoke": "node --env-file=.env scripts/live-smoke.ts"
+    "smoke": "node --env-file=.env scripts/live-smoke.ts",
+    "prepublishOnly": "pnpm typecheck && pnpm test && pnpm build"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
