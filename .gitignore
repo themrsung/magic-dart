@@ -1,0 +1,10 @@
+# Secrets — OpenDART crtfc_key lives here
+.env
+.env.*
+!.env.example
+
+node_modules/
+dist/
+coverage/
+*.log
+.DS_Store
