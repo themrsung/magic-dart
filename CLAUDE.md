@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Typed, rate-limited Node client for the OpenDART (금융감독원 전자공시) API. TypeScript with no runtime dependencies. Node ≥22.18 runs the `.ts` files directly during development; `pnpm build` compiles `src/` to `dist/` for the published npm package.
+Typed, rate-limited Node client for the OpenDART (금융감독원 전자공시) API. TypeScript with no runtime dependencies. Node (22.23.4+, 24.22.1+ or 26.12.1+, per `engines`) runs the `.ts` files directly during development; `pnpm build` compiles `src/` to `dist/` for the published npm package.
 
 ## Commands
 
